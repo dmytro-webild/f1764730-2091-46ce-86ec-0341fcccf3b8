@@ -5,14 +5,13 @@ import ReactLenis from "lenis/react";
 import ContactSplitForm from '@/components/sections/contact/ContactSplitForm';
 import FaqSplitMedia from '@/components/sections/faq/FaqSplitMedia';
 import FeatureCardTwentyFour from '@/components/sections/feature/FeatureCardTwentyFour';
-import FooterCard from '@/components/sections/footer/FooterCard';
+import FooterBaseReveal from '@/components/sections/footer/FooterBaseReveal';
 import HeroOverlayTestimonial from '@/components/sections/hero/HeroOverlayTestimonial';
 import MetricCardTwo from '@/components/sections/metrics/MetricCardTwo';
 import NavbarLayoutFloatingInline from '@/components/navbar/NavbarLayoutFloatingInline';
 import ProductCardOne from '@/components/sections/product/ProductCardOne';
 import TestimonialCardTen from '@/components/sections/testimonial/TestimonialCardTen';
 import TextSplitAbout from '@/components/sections/about/TextSplitAbout';
-import { Facebook, Instagram, Linkedin } from "lucide-react";
 
 export default function LandingPage() {
   return (
@@ -222,46 +221,65 @@ export default function LandingPage() {
   <div id="contact" data-section="contact">
       <ContactSplitForm
       useInvertedBackground={false}
-      title="Schedule Your Service"
-      description="Ready to experience premium automotive care? Get in touch with us today to book your appointment or inquire about our services."
+      title="Ottieni un Preventivo Gratuito"
+      description="Desideri un servizio di diagnosi o riparazione? Contattaci oggi per una consulenza personalizzata o per fissare un appuntamento."
       inputs={[
         {
-          name: "name",          type: "text",          placeholder: "Your Name",          required: true,
+          name: "name",          type: "text",          placeholder: "Il tuo nome",          required: true
         },
         {
-          name: "email",          type: "email",          placeholder: "Your Email",          required: true,
+          name: "email",          type: "email",          placeholder: "La tua email",          required: true
         },
         {
-          name: "phone",          type: "tel",          placeholder: "Your Phone (Optional)",          required: false,
-        },
+          name: "phone",          type: "tel",          placeholder: "Il tuo telefono (Opzionale)",          required: false
+        }
       ]}
       textarea={{
-        name: "message",        placeholder: "Your Message",        rows: 5,
-        required: true,
+        name: "message",        placeholder: "Il tuo messaggio",        rows: 5,
+        required: true
       }}
       imageSrc="http://img.b2bpic.net/free-photo/mechanic-starting-maintenance_23-2147897914.jpg"
       imageAlt="Modern automotive garage building exterior"
       mediaAnimation="none"
       mediaPosition="right"
-      buttonText="Send Message"
+      buttonText="Invia Messaggio"
     />
   </div>
 
   <div id="footer" data-section="footer">
-      <FooterCard
+      <FooterBaseReveal
       logoText="Officina Meccatronica"
-      copyrightText="© 2024 Officina Meccatronica. All rights reserved."
-      socialLinks={[
+      columns={[
         {
-          icon: Facebook,
-          href: "#",          ariaLabel: "Facebook"},
-        {
-          icon: Instagram,
-          href: "#",          ariaLabel: "Instagram"},
-        {
-          icon: Linkedin,
-          href: "#",          ariaLabel: "LinkedIn"},
+          title: "Navigazione",          items: [
+            {
+              label: "Home",              href: "#hero"
+            },
+            {
+              label: "Chi Siamo",              href: "#about"
+            },
+            {
+              label: "Servizi",              href: "#features"
+            },
+            {
+              label: "Pacchetti",              href: "#service-packages"
+            },
+            {
+              label: "Statistiche",              href: "#metrics"
+            },
+            {
+              label: "Testimonianze",              href: "#testimonials"
+            },
+            {
+              label: "FAQ",              href: "#faq"
+            },
+            {
+              label: "Contatti",              href: "#contact"
+            }
+          ]
+        }
       ]}
+      copyrightText="© 2024 Officina Meccatronica. Tutti i diritti riservati."
     />
   </div>
       </ReactLenis>
